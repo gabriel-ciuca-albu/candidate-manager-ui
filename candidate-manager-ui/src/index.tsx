@@ -4,14 +4,21 @@ import './index.css';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+import { Auth0Provider } from '@auth0/auth0-react';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <Auth0Provider
+    domain="dev-resource-manager.eu.auth0.com"
+    clientId="bZHbiRW36l2irHociSjNyBCXZS9EWd5e"
+    redirectUri="http://localhost:3111"
+  >
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </Auth0Provider>
 );
 
 // If you want your app to work offline and load faster, you can change
